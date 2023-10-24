@@ -18,7 +18,7 @@ namespace SwordDamageFormulaGUI
         public int FlameDamage = 0;
         public int Damage;
 
-        public void CalculateDamage()// May need to make this method provite to stop other methods Hijacking the Damage field
+        public void CalculateDamage()// May need to make this method private to stop other methods Hijacking the Damage field
         {
             Damage = (int)(Roll * MagicMultiplier) + BASE_DAMAGE + FlameDamage;
             Debug.WriteLine($"CalculateDamage finished: {Damage} (roll: {Roll})");
