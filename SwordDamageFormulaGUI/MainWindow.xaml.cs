@@ -30,10 +30,11 @@ namespace SwordDamageFormulaGUI
             swordDamage.SetFlaming(false);
             RollDice();
         }
-
         public void RollDice()
         {
             swordDamage.Roll = random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7);
+            swordDamage.SetFlaming(flaming.IsChecked.Value);
+            swordDamage.SetMagic(magic.IsChecked.Value);
             DisplayDamage();
         }
         public void DisplayDamage()
@@ -64,5 +65,6 @@ namespace SwordDamageFormulaGUI
             swordDamage.SetMagic(false);
             DisplayDamage();
         }
-    }
+    }// The bug here is that DisplayDamage method is used with every box checked/unchecked method, this may undo previous damage calculations made.
+     // Or maybe everytime swordDamage.SetFlaming or SetMagic checks are done this method in the swordDamage class keeps resetting or wiping previous calcualtions mad because they always calculate damage.   
 }

@@ -10,15 +10,15 @@ namespace SwordDamageFormulaGUI
 {
     internal class SwordDamage
     {
-        public const int BASE_DAMAGE = 3;
-        public const int FLAME_DAMAGE = 2;
+        public const int BASE_DAMAGE = 3; //private this?
+        public const int FLAME_DAMAGE = 2; //private this?
 
         public int Roll;
         public decimal MagicMultiplier = 1M;
         public int FlameDamage = 0;
         public int Damage;
 
-        public void CalculateDamage()// May need to make this method private to stop other methods Hijacking the Damage field
+        public void CalculateDamage()// private this?
         {
             Damage = (int)(Roll * MagicMultiplier) + BASE_DAMAGE + FlameDamage;
             Debug.WriteLine($"CalculateDamage finished: {Damage} (roll: {Roll})");
