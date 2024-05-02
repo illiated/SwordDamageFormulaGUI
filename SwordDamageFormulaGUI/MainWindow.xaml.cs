@@ -31,7 +31,7 @@ namespace SwordDamageFormulaGUI
         {
             swordDamage.Roll = random.Next(1, 7) + random.Next(1, 7) + random.Next(1, 7);
             swordDamage.SetFlaming(flaming.IsChecked.Value);
-            swordDamage.SetMagic(magic.IsChecked.Value);
+            swordDamage.SetMagic(magic.IsChecked.Value);// This Methos calls the calcualte damage and erases any flame points added by the previous SetFlaming methods adds.
             DisplayDamage();
         }
         void DisplayDamage()
